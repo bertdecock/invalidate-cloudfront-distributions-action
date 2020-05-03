@@ -1,0 +1,11 @@
+name: 'Invalidate Cloudfront Distributions'
+description: 'Invalidate Cloudfront Distributions of the ids passed in distribution-ids'
+inputs:
+  bucket-name:
+    description: 'The deploy bucket'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.distribution-ids }}
